@@ -1,3 +1,4 @@
+import { query } from 'express';
 import { dbConfig } from '../../../DB/connection.js';
 import {
   createTableSuperAdmin,
@@ -30,13 +31,15 @@ export const createdTables = async (req, res) => {
     { query: createTableSuperAdmin, name: 'Super Admin' },
     { query: createTableSuperAdminsPhones, name: 'Super Admin Phone' },
     { query: createdTablHelpdesk, name: 'Helpdesk' },
+    { query: StudentModels.createDepartmentTable, name: 'Department' },
     { query: StudentModels.createStudentTableQuery, name: 'Student' },
     { query: StudentModels.createStudentPhoneTableQuery, name: 'Student Phone' },
     { query: StudentModels.createSendTableQuery, name: 'Send' },
     { query: StudentModels.AssignmentTable, name: 'Assignment Table' },
     { query: StudentModels.TakesAssignmentTable, name: 'Takes Assignment Table' },
     { query: StudentModels.PaymentTable, name: 'Payment Table' },
-    { query: StudentModels.ExtraPaymentTable, name: 'Extra Payment Table' },
+    { query: StudentModels.ExtraPaymentTable, name: 'Extra Payment Table' },  
+    { query: StudentModels.createEnrollmentTable, name: 'Enrollment' }
   ];
 
   try {
